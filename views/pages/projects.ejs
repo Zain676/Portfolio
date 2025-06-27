@@ -1,0 +1,38 @@
+<%- include('../partials/header', { title }) %>
+<main class="flex-grow">
+  <section class="bg-gray-50 py-16">
+    <div class="max-w-6xl mx-auto px-6">
+      <h1 class="text-4xl font-extrabold mb-8 text-center">My Projects</h1>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <% projects.forEach(p => { %>
+        <div
+          class="bg-white shadow-md rounded-lg overflow-hidden hover:shadow-xl transition"
+        >
+          <img src="<%= p.imageUrls[0] %>" class="w-full h-52 object-cover" />
+          <div class="p-5">
+            <h2 class="text-lg font-bold text-gray-900"><%= p.title %></h2>
+            <p class="text-gray-600 text-sm mb-3">
+              <%= p.description.substring(0, 120) %>...
+            </p>
+            <div class="flex flex-wrap gap-2 mb-3">
+              <% p.techStack.forEach(tech => { %>
+              <span
+                class="text-xs bg-purple-100 text-purple-800 px-2 py-1 rounded"
+                ><%= tech %></span
+              >
+              <% }) %>
+            </div>
+            <a
+              href="/projects/<%= p.slug %>"
+              class="inline-block mt-2 text-indigo-600 hover:underline"
+              >View Details</a
+            >
+          </div>
+        </div>
+        <% }) %>
+      </div>
+    </div>
+  </section>
+</main>
+
+<%- include('../partials/footer') %>

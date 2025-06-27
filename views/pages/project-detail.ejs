@@ -1,0 +1,41 @@
+<%- include('../partials/header', { title }) %>
+<main class="flex-grow">
+  <section class="max-w-5xl mx-auto px-6 py-16">
+    <h1 class="text-4xl font-extrabold mb-6"><%= project.title %></h1>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+      <% project.imageUrls.forEach(url => { %>
+      <img src="<%= url %>" class="rounded shadow object-cover" />
+      <% }) %>
+    </div>
+    <p class="text-lg text-gray-700 leading-relaxed mb-6">
+      <%- project.description.replace(/\r?\n/g, '<br>') %>
+
+    </p>
+    <div class="mb-6">
+      <strong class="block mb-2 text-gray-800">Tech Stack:</strong>
+      <div class="flex flex-wrap gap-2">
+        <% project.techStack.forEach(tech => { %>
+        <span
+          class="bg-indigo-100 text-indigo-700 px-2 py-1 text-sm rounded"><%=
+          tech %></span>
+        <% }) %>
+      </div>
+    </div>
+    <div class="flex gap-4">
+      <% if (project.github) { %>
+      <a
+        href="<%= project.github %>"
+        target="_blank"
+        class="bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-900">GitHub</a>
+      <% } %> <% if (project.liveLink) { %>
+      <a
+        href="<%= project.liveLink %>"
+        target="_blank"
+        class="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700">Live
+        Site</a>
+      <% } %>
+    </div>
+  </section>
+</main>
+
+<%- include('../partials/footer') %>

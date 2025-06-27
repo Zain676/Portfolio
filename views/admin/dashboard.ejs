@@ -1,0 +1,60 @@
+<%- include('../partials/header', { title }) %>
+<main class="flex-grow">
+  <section class="p-10">
+    <h1 class="text-2xl font-bold mb-6">Admin Dashboard</h1>
+    <form
+      action="/admin/projects"
+      method="POST"
+      enctype="multipart/form-data"
+      class="space-y-4"
+    >
+      <input
+        name="title"
+        placeholder="Title"
+        required
+        class="w-full border p-2"
+      />
+      <textarea
+        name="description"
+        placeholder="Description"
+        required
+        class="w-full border p-2"
+      ></textarea>
+      <input
+        name="techStack"
+        placeholder="Tech Stack (comma separated)"
+        required
+        class="w-full border p-2"
+      />
+      <input name="github" placeholder="GitHub URL" class="w-full border p-2" />
+      <input name="liveLink" placeholder="Live URL" class="w-full border p-2" />
+      <input type="file" name="images" multiple required class="w-full" />
+      <br /><br />
+      <label class="inline-flex items-center mt-4">
+        <input
+          type="checkbox"
+          name="isFeatured"
+          value="on"
+          class="form-checkbox h-5 w-5 text-blue-600"
+        />
+        <span class="ml-2 text-gray-700">Mark as Featured</span>
+      </label>
+
+      <br /><br />
+
+      <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded">
+        Add Project
+      </button>
+    </form>
+    <div class="mt-10">
+      <h2 class="text-xl font-semibold">All Projects</h2>
+      <ul class="mt-4 space-y-2">
+        <% projects.forEach(p => { %>
+        <li><strong><%= p.title %></strong> — <%= p.slug %></li>
+        <% }) %>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<%- include('../partials/footer') %>
