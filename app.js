@@ -8,6 +8,9 @@ const flash = require("connect-flash");
 const path = require("path");
 const app = express();
 
+const indexRoutes = require("./routes/index");
+const adminRoutes = require("./routes/admin");
+
 // DB Connection
 mongoose
   .connect(process.env.MONGO_URI)
@@ -39,8 +42,6 @@ app.use(
 app.use(flash());
 
 // Routes
-const indexRoutes = require("./routes/index");
-const adminRoutes = require("./routes/admin");
 app.use("/", indexRoutes);
 app.use("/admin", adminRoutes);
 
@@ -49,7 +50,11 @@ app.use((req, res) => {
   res.status(404).render("pages/404", { title: "404 Not Found" });
 });
 
-const PORT = 8080;
+console.log("Environment:", process.env.NODE_ENV);
+console.log("Mongo URI:", process.env.MONGO_URI ? "Loaded" : "Missing");
+
+
+const PORT = 8080;  
 const HOST = '0.0.0.0';
 app.listen(PORT, HOST, () => {
   console.log(`Server running on ${HOST}:${PORT}`);

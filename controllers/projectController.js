@@ -1,6 +1,7 @@
 const Project = require("../models/project");
+const Contact = require("../models/contact");
 
-
+// Project-related controllers
 module.exports.getHome = async (req, res) => {
   try {
     const featuredProjects = await Project.find({ isFeatured: true }).limit(3);
