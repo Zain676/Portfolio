@@ -1,5 +1,17 @@
 const Contact = require("../models/contact");
 
+module.exports.getHome = (req, res) => {
+  res.render("pages/home", { title: "About" });
+};
+
+module.exports.getAllProjects = (req, res) => {
+  res.render("pages/projects", { title: "About" });
+};
+
+module.exports.getProjectDetail = (req, res) => {
+  res.render("pages/project-detail", { title: "About" });
+};
+
 module.exports.getAbout = (req, res) => {
   res.render("pages/about", { title: "About" });
 };
