@@ -32,7 +32,7 @@ app.use(
     secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: false,
-    store: MongoStore.create({ mongoUrl: process.env.MONGO_URI }),
+    store: MongoStore.create({ mongoUrl: process.env.MONGO_URI,dbName: 'portfolio' }),
   })
 );
 
@@ -51,5 +51,7 @@ app.use((req, res) => {
 
 const PORT = process.env.PORT || 3000;
 const HOST = '0.0.0.0';
+app.listen(PORT, HOST, () => {
+  console.log(`Server running on ${HOST}:${PORT}`);
+});
 
-app.listen(PORT, HOST, () => console.log(`Server running on ${HOST}:${PORT}`));
