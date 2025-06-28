@@ -19,6 +19,8 @@ router.get('/education', pageController.getEducation);
 router.get('/gallery', pageController.getGallery);
 router.get('/contact', pageController.getContact);
 
+router.get('/favicon.ico', (req, res) => res.status(204).end());
+
 // Contact Form Submission
 router.post('/contact', pageController.handleContactForm);
 

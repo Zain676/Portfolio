@@ -50,9 +50,6 @@ app.use((req, res) => {
   res.status(404).render("pages/404", { title: "404 Not Found" });
 });
 
-console.log("Environment:", process.env.NODE_ENV);
-console.log("Mongo URI:", process.env.MONGO_URI ? "Loaded" : "Missing");
-
 
 const PORT = 8080;  
 const HOST = '0.0.0.0';
