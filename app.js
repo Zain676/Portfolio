@@ -49,7 +49,7 @@ app.use((req, res) => {
   res.status(404).render("pages/404", { title: "404 Not Found" });
 });
 
-const PORT = process.env.PORT || 3000;
+const PORT = 8080;
 const HOST = '0.0.0.0';
 app.listen(PORT, HOST, () => {
   console.log(`Server running on ${HOST}:${PORT}`);
