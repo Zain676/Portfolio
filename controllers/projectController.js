@@ -2,7 +2,7 @@
 const Project = require("../models/project");
 
 
-exports.getHome = async (req, res) => {
+module.exports.getHome = async (req, res) => {
   try {
     const featuredProjects = await Project.find({ isFeatured: true }).limit(3);
     res.render('pages/home', { title: 'Home', featuredProjects });
@@ -12,7 +12,7 @@ exports.getHome = async (req, res) => {
   }
 };
 
-exports.getAllProjects = async (req, res) => {
+module.exports.getAllProjects = async (req, res) => {
   try {
     const { search, tech, page = 1, limit = 6 } = req.query;
     const query = {};
@@ -40,7 +40,7 @@ exports.getAllProjects = async (req, res) => {
   }
 };
 
-exports.getProjectDetail = async (req, res) => {
+module.exports.getProjectDetail = async (req, res) => {
   try {
     const project = await Project.findOne({ slug: req.params.slug });
     if (!project) return res.status(404).render('pages/404', { title: 'Not Found' });
@@ -51,7 +51,7 @@ exports.getProjectDetail = async (req, res) => {
   }
 };
 
-exports.getAdminDashboard = async (req, res) => {
+module.exports.getAdminDashboard = async (req, res) => {
   try {
     const projects = await Project.find().sort({ createdAt: -1 });
     res.render('admin/dashboard', { title: 'Admin Panel', projects });
@@ -61,7 +61,7 @@ exports.getAdminDashboard = async (req, res) => {
   }
 };
 
-exports.createProject = async (req, res) => {
+module.exports.createProject = async (req, res) => {
   try {
     const project = new Project(req.body);
     project.isFeatured = req.body.isFeatured === 'on';
@@ -75,11 +75,11 @@ exports.createProject = async (req, res) => {
 };
 
 
-exports.getContact = (req, res) => {
+module.exports.getContact = (req, res) => {
   res.render('pages/contact', { title: 'Contact' });
 };
 
-exports.submitContactForm = async (req, res) => {
+module.exports.submitContactForm = async (req, res) => {
   try {
     const { name, email, message } = req.body;
 

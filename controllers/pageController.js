@@ -1,29 +1,29 @@
 const Contact = require("../models/contact");
 
-exports.getAbout = (req, res) => {
+module.exports.getAbout = (req, res) => {
   res.render("pages/about", { title: "About" });
 };
 
-exports.getExperience = (req, res) => {
+module.exports.getExperience = (req, res) => {
   res.render("pages/experience", { title: "Experience" });
 };
 
-exports.getEducation = (req, res) => {
+module.exports.getEducation = (req, res) => {
   res.render("pages/education", { title: "Education" });
 };
 
-exports.getGallery = (req, res) => {
+module.exports.getGallery = (req, res) => {
   res.render("pages/gallary", { title: "Gallery" });
 };
 
-exports.getContact = (req, res) => {
+module.exports.getContact = (req, res) => {
   res.render("pages/contact", {
     title: "Contact",
     success: req.flash("success"),
   });
 };
 
-exports.handleContactForm = async (req, res) => {
+module.exports.handleContactForm = async (req, res) => {
   const { name, email, message } = req.body;
   try {
     await Contact.create({ name, email, message });
