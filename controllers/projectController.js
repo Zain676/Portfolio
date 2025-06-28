@@ -1,4 +1,3 @@
-// === CONTROLLER (controllers/projectController.js) ===
 const Project = require("../models/project");
 
 
@@ -73,24 +72,3 @@ module.exports.createProject = async (req, res) => {
     res.status(500).render('pages/500', { title: 'Server Error' });
   }
 };
-
-
-module.exports.getContact = (req, res) => {
-  res.render('pages/contact', { title: 'Contact' });
-};
-
-module.exports.submitContactForm = async (req, res) => {
-  try {
-    const { name, email, message } = req.body;
-
-    // For now, just log or simulate save
-    console.log('Contact Form Submitted:', { name, email, message });
-
-    // Show a success message (flash message or redirect with query param)
-    res.redirect('/contact?success=true');
-  } catch (err) {
-    console.error('Contact form error:', err);
-    res.status(500).render('pages/500', { title: 'Server Error' });
-  }
-};
-

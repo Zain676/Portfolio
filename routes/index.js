@@ -8,7 +8,6 @@ router.get('/', (req, res) => {
   res.redirect('/home');
 });
 
-// Main routes
 router.get('/home', projectController.getHome);
 router.get('/projects', projectController.getAllProjects);
 router.get('/projects/:slug', projectController.getProjectDetail);
