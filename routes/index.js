@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 const projectController = require('../controllers/projectController');
-const pageController = require('../controllers/pageController'); // ✅ Import added
+const pageController = require('../controllers/pageController'); 
 
 // Main routes
 router.get('/', projectController.getHome);
@@ -15,5 +15,9 @@ router.get('/experience', pageController.getExperience);
 router.get('/education', pageController.getEducation);
 router.get('/gallery', pageController.getGallery);
 router.get('/contact', pageController.getContact);
+
+// Contact Form Submission
+router.post('/contact', pageController.handleContactForm);
+
 
 module.exports = router;
