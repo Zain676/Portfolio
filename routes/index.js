@@ -4,8 +4,12 @@ const router = express.Router();
 const projectController = require('../controllers/projectController');
 const pageController = require('../controllers/pageController'); 
 
+router.get('/', (req, res) => {
+  res.redirect('/home');
+});
+
 // Main routes
-router.get('/', projectController.getHome);
+router.get('/home', projectController.getHome);
 router.get('/projects', projectController.getAllProjects);
 router.get('/projects/:slug', projectController.getProjectDetail);
 
