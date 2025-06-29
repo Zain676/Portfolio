@@ -18,6 +18,25 @@ body {
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
+/* Footer ************** */
+
+.footer-link:hover {
+  color: #3b82f6;
+  transform: translateX(3px);
+  transition: all 0.2s ease;
+}
+.social-icon:hover {
+  transform: scale(1.1) translateY(-3px);
+  transition: all 0.2s ease;
+}
+.x {
+  color: white !important;
+}
+
+.foot-text {
+  color: white !important;
+}
+
 @media (max-width: 1024px) {
   .navbar {
     margin-left: 1rem !important;

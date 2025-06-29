@@ -1,5 +1,61 @@
-<footer class="mt-20 py-10 text-center bg-white shadow-inner">
-  <p>&copy; <%= new Date().getFullYear() %> Muhammad Zain. All rights reserved.</p>
-</footer>
-</body>
+    <!-- Footer Section -->
+    <footer class="w-full bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 py-10">
+        <div class="container mx-auto px-4">
+            <!-- Main Footer Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Branding Section -->
+                <div class="space-y-4">
+                    <h2 class="text-2xl font-bold foot-text">Muhammad Zain</h2>
+                    <p class="text-gray-600 dark:text-gray-300 text-sm">Full Stack Developer | MERN Specialist | Building digital experiences</p>
+                    
+                    <div class="flex space-x-4 pt-2">
+                        <a href="mailto:mzaindev9@gmail.com" class="text-sm text-gray-600 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400">
+                            <i class="fas fa-envelope mr-2"></i> mzaindev9@gmail.com
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Navigation Links -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4 foot-text">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="/home" class="footer-link text-gray-600 dark:text-gray-300">Home</a></li>
+                        <li><a href="/projects" class="footer-link text-gray-600 dark:text-gray-300">Projects</a></li>
+                        <li><a href="/experience" class="footer-link text-gray-600 dark:text-gray-300">Experience</a></li>
+                        <li><a href="/gallery" class="footer-link text-gray-600 dark:text-gray-300">Gallery</a></li>
+                        <li><a href="/contact" class="footer-link text-gray-600 dark:text-gray-300">Contact</a></li>
+                    </ul>
+                </div>
+                <!-- Social Media -->
+                <div>
+                  <h3 class="text-lg font-semibold mb-4 foot-text">Connect With Me</h3>
+                  <div class="flex space-x-4 text-gray-400 dark:text-gray-400 text-xl transition-all duration-200">
+                    <a href="https://linkedin.com/in/mzain" target="_blank"
+                      class="social-icon hover:text-[#0077b5] transition-colors duration-300">
+                      <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/mzain" target="_blank"
+                      class="social-icon hover:text-black dark:hover:text-white transition-colors duration-300">
+                      <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://twitter.com/mzain" target="_blank"
+                      class="social-icon hover:text-white transition-colors duration-300">
+                      <i class="fab fa-x-twitter"></i>
+                    </a>
+                    <a href="https://facebook.com/mzain" target="_blank"
+                      class="social-icon hover:text-[#1877F2] transition-colors duration-300">
+                      <i class="fab fa-facebook-f"></i>
+                    </a>
+                  </div>
+                </div>
+
+            </div>
+
+            <!-- Copyright Bar -->
+            <div class="border-t border-gray-200 dark:border-gray-700 mt-8 pt-6 text-center text-sm text-gray-500 dark:text-gray-400">
+                &copy; <%= new Date().getFullYear() %> Muhammad Zain. All rights reserved.
+            </div>
+        </div>
+    </footer>
+  </body>
 </html>
