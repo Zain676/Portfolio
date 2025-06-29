@@ -1,0 +1,56 @@
+@media (max-width: 1024px) {
+  .navbar {
+    margin-left: 1rem !important;
+    margin-right: 1rem !important;
+  }
+
+  .h1 {
+    font-size: 3rem !important;
+  }
+  #p {
+    font-size: 1.3rem !important;
+  }
+
+  #view-btn {
+    font-size: 1rem !important;
+    padding: 0.6rem !important;
+  }
+
+  #contact-btn {
+    font-size: 1rem !important;
+    padding: 0.6rem !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .h1 {
+    font-size: 2.5rem !important;
+  }
+  #p {
+    font-size: 1rem !important;
+  }
+}
+
+@media (max-width: 514px) {
+  .h1 {
+    font-size: 2.3rem !important;
+  }
+}
+
+@media (max-width: 425px) {
+  .h1 {
+    font-size: 2rem !important;
+  }
+    #view-btn {
+    font-size: 0.9rem !important;
+    padding: 0.5rem !important;
+  }
+
+  #contact-btn {
+    font-size: 0.9rem !important;
+    padding: 0.5rem !important;
+  }
+  .h2 {
+    font-size: 1.5rem !important;
+  }
+}

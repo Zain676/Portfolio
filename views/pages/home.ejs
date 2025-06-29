@@ -4,20 +4,20 @@
     class="relative bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white min-h-screen flex items-center justify-center"
   >
     <div class="text-center">
-      <h1 class="text-5xl md:text-6xl font-extrabold mb-4">
+      <h1 class="text-5xl md:text-6xl font-extrabold mb-4 h1">
         Hi, I'm Muhammad Zain
       </h1>
-      <p class="text-xl md:text-2xl font-light mb-6">
+      <p class="text-xl md:text-2xl font-light mb-6" id="p">
         A Full Stack MERN Developer crafting elegant web solutions
       </p>
       <div class="space-x-4">
         <a
-          href="/projects"
+          href="/projects" id="view-btn"
           class="bg-white text-indigo-600 font-semibold px-6 py-3 rounded shadow hover:shadow-lg transition"
           >View Projects</a
         >
         <a
-          href="#contact"
+          href="#contact" id="contact-btn"
           class="bg-transparent border border-white px-6 py-3 rounded hover:bg-white hover:text-indigo-600 transition"
           >Contact Me</a
         >
@@ -26,7 +26,7 @@
   </section>
   <section class="bg-white py-16">
     <div class="max-w-6xl mx-auto px-6">
-      <h2 class="text-3xl font-bold mb-8 text-center">Featured Projects</h2>
+      <h2 class="text-3xl font-bold mb-8 text-center h2">Featured Projects</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <% featuredProjects.forEach(p => { %>
         <div

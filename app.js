@@ -14,7 +14,6 @@ const app = express();
 const indexRoutes = require("./routes/index");
 const adminRoutes = require("./routes/admin");
 
-// DB Connection
 mongoose
   .connect(process.env.MONGO_URI)
   .then(() => console.log("MongoDB connected"))
@@ -25,14 +24,12 @@ app.use((req, res, next) => {
   next();
 });
 
-// Middleware
 app.set("view engine", "ejs");
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
 app.use(flash());
 
-// Session setup
 app.use(
   session({
     secret: process.env.SESSION_SECRET,
@@ -44,15 +41,12 @@ app.use(
 
 app.use(flash());
 
-// Routes
 app.use("/", indexRoutes);
 app.use("/admin", adminRoutes);
 
-// Error Pages
 app.use((req, res) => {
   res.status(404).render("pages/404", { title: "404 Not Found" });
 });
-
 
 const PORT = 8080;  
 const HOST = '0.0.0.0';
