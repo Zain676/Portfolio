@@ -4,6 +4,8 @@
   <section class="max-w-6xl mx-auto px-4 py-24">
     <h1 class="text-4xl font-bold mb-12 text-center">Gallery</h1>
 
+    <% const version = '1719494400'; // use your Cloudinary version (or remove it if not used) %>
+
     <% const galleryData = [
       {
         event: "Tech Expo 2024",
@@ -13,7 +15,7 @@
       {
         event: "She Rises Workshop",
         description: "Empowering female students through leadership and personal development sessions.",
-        images: [6, 7, 8, 9,10]
+        images: [6, 7, 8, 9, 10]
       },
       {
         event: "Hackathon Spring 2025",
@@ -29,7 +31,7 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           <% section.images.forEach(i => { %>
             <img
-              src="https://res.cloudinary.com/dka8n305j/image/upload/gallery/<%= i %>.JPG"
+              src="https://res.cloudinary.com/dka8n305j/image/upload/v1751180181/<%= i %>.jpg"
               class="rounded-lg shadow-md hover:scale-105 transition-transform duration-200"
               alt="<%= section.event %> - Image <%= i %>"
               onclick="openLightbox('<%= i %>')" />
@@ -38,8 +40,15 @@
       </div>
     <% }); %>
 
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="fixed inset-0 bg-black bg-opacity-75 hidden justify-center items-center z-50">
+      <span class="absolute top-4 right-4 text-white cursor-pointer text-3xl" onclick="closeLightbox()">&times;</span>
+      <img id="lightbox-img" class="max-w-full max-h-full rounded-lg shadow-lg" src="" alt="Lightbox Image" />
+    </div>
   </section>
 </main>
+
+<%- include('../partials/footer') %>
 
 <script>
   function openLightbox(imageId) {
@@ -54,6 +63,3 @@
     lightbox.classList.add('hidden');
   }
 </script>
-
-
-<%- include('../partials/footer') %>
