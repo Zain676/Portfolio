@@ -17,7 +17,7 @@
           >View Projects</a
         >
         <a
-          href="#contact" id="contact-btn"
+          href="/contact" id="contact-btn"
           class="bg-transparent border border-white px-6 py-3 rounded hover:bg-white hover:text-indigo-600 transition"
           >Contact Me</a
         >
@@ -34,21 +34,21 @@
         >
           <img src="<%= p.imageUrls[0] %>" class="w-full h-56 object-cover" />
           <div class="p-5">
-            <h3 class="text-xl font-bold mb-2"><%= p.title %></h3>
-            <p class="text-gray-700 mb-3">
+            <h3 class="text-xl font-bold mb-2 h3"><%= p.title %></h3>
+            <p class="text-gray-700 mb-3 desc-p">
               <%= p.description.substring(0, 100) %>...
             </p>
             <div class="flex gap-2 flex-wrap mb-3">
               <% p.techStack.forEach(tech => { %>
               <span
-                class="text-xs bg-indigo-100 text-indigo-700 px-2 py-1 rounded"
+                class="text-xs bg-indigo-100 text-indigo-700 px-2 py-1 rounded techStack"
                 ><%= tech %></span
               >
               <% }) %>
             </div>
             <a
               href="/projects/<%= p.slug %>"
-              class="text-indigo-600 hover:underline font-medium"
+              class="text-indigo-600 hover:underline font-medium read-btn"
               >Read More →</a
             >
           </div>

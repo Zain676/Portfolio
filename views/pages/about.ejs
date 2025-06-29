@@ -1,34 +1,62 @@
 <%- include('../partials/header', { title }) %>
 <main class="flex-grow">
   <section class="max-w-4xl mx-auto px-4 py-24">
-    <h1 class="text-4xl font-bold mb-8">About Me</h1>
-    <div class="space-y-6 text-lg leading-relaxed">
-      <p>
-        I’m Muhammad Zain, a full-stack web developer with a strong focus on
-        creating robust, scalable, and high-performance web applications using
-        the MERN stack. My passion lies in building technology that makes lives
-        easier, streamlines business processes, and inspires innovation.
-      </p>
-      <p>
-        Since beginning my journey in development, I've built everything from
-        static websites to full-stack enterprise-level applications. I’m
-        proficient in JavaScript, Node.js, MongoDB, and Express, and I actively
-        contribute to open-source and freelance projects.
-      </p>
-      <p>
-        Beyond coding, I’m an active contributor to university clubs, research
-        initiatives, and community teaching efforts. I serve as the student
-        focal person at ORIC and manage internal and external communication for
-        several university events and projects.
-      </p>
-      <p>
-        My mission is to continuously improve my craft while mentoring others
-        and staying up-to-date with the latest tech trends. I believe in
-        lifelong learning and collaboration as a force multiplier in this
-        digital age.
-      </p>
+    <div class="flex flex-col md:flex-row gap-12 items-center mb-16">
+        <div class="w-full md:w-1/3">
+            <div class="rounded-xl overflow-hidden shadow-lg profile-pic bg-gradient-to-br from-blue-50 to-indigo-50">
+                <img src="/images/Muhammad Zain.png" alt="Portrait of Muhammad Zain - a young developer with glasses working at a desk with code visible on the screen, wearing casual clothing" class="w-full h-auto object-cover" />
+            </div>
+        </div>
+        
+        <div class="w-full md:w-2/3">
+            <h1 class="text-4xl font-bold text-slate-800 mb-4">Hi, I'm Muhammad Zain</h1>
+            <p class="text-lg text-slate-600 mb-6 leading-relaxed">
+                I build things for the web with a passion for solving problems through code. Currently balancing the worlds of development and academia, I'm a full-stack developer who loves the entire journey from designing intuitive interfaces to making them come alive with functionality.
+            </p>
+            
+            <div class="flex flex-wrap gap-3 mb-8">
+                <span class="skill-pill bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-medium">JavaScript</span>
+                <span class="skill-pill bg-green-100 text-green-800 px-4 py-2 rounded-full text-sm font-medium">React</span>
+                <span class="skill-pill bg-yellow-100 text-yellow-800 px-4 py-2 rounded-full text-sm font-medium">Node.js</span>
+                <span class="skill-pill bg-purple-100 text-purple-800 px-4 py-2 rounded-full text-sm font-medium">MongoDB</span>
+                <span class="skill-pill bg-red-100 text-red-800 px-4 py-2 rounded-full text-sm font-medium">Express</span>
+                <span class="skill-pill bg-indigo-100 text-indigo-800 px-4 py-2 rounded-full text-sm font-medium">HTML/CSS</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="space-y-8 max-w-3xl mx-auto">
+        <div>
+            <h2 class="text-2xl font-semibold text-slate-800 mb-4">My Developer Journey</h2>
+            <p class="text-slate-600 leading-relaxed">
+                From building my first simple landing page to crafting complex admin dashboards, I've discovered that good development is about understanding people as much as understanding code. The MERN stack became my tool of choice because it lets me move quickly from idea to implementation while ensuring a smooth experience for users.
+            </p>
+        </div>
+
+        <div>
+            <h2 class="text-2xl font-semibold text-slate-800 mb-4">Beyond Code</h2>
+            <p class="text-slate-600 leading-relaxed">
+                When I'm not coding, you'll find me working as the student focal person at ORIC, where I help bridge the gap between students and research opportunities. I believe strongly in the power of community - that's why I volunteer with Each One Teach One, helping others develop their skills and find their path in tech.
+            </p>
+        </div>
+
+        <div>
+            <h2 class="text-2xl font-semibold text-slate-800 mb-4">Why I Love What I Do</h2>
+            <p class="text-slate-600 leading-relaxed">
+                There's magic in turning abstract concepts into something tangible that people can use. Whether it's a small tool that solves a specific problem or a complex system that drives a business, I thrive on that moment when everything comes together and makes someone's life or work just a little bit better.
+            </p>
+        </div>
+
+        <div class="pt-6">
+            <a href="/contact" class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-colors duration-200">
+                Let's Connect
+            </a>
+        </div>
     </div>
   </section>
 </main>
 
 <%- include('../partials/footer') %>
+
+
+

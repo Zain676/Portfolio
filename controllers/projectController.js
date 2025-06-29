@@ -4,7 +4,6 @@ const Contact = require("../models/contact");
 // Project-related controllers
 module.exports.getHome = async (req, res) => {
   try {
-    console.log("Home route triggered");
     const featuredProjects = await Project.find({ isFeatured: true }).limit(3);
     res.render('pages/home', { title: 'Home', featuredProjects });
   } catch (err) {
