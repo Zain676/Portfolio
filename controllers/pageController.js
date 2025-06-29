@@ -13,7 +13,7 @@ module.exports.getEducation = (req, res) => {
 };
 
 module.exports.getGallery = (req, res) => {
-  res.render("pages/gallary", { title: "Gallery" });
+  res.render("pages/gallery", { title: "Gallery" });
 };
 
 module.exports.getContact = (req, res) => {

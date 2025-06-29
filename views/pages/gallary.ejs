@@ -29,7 +29,7 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           <% section.images.forEach(i => { %>
             <img
-              src="https://res.cloudinary.com/dka8n305j/image/upload/v<%= version %>/gallery/<%= i %>.jpg"
+              src="https://res.cloudinary.com/dka8n305j/image/upload/gallery/<%= i %>.jpg"
               class="rounded-lg shadow-md hover:scale-105 transition-transform duration-200"
               alt="<%= section.event %> - Image <%= i %>" />
               onclick="openLightbox('<%= i %>')" />
@@ -42,8 +42,18 @@
 </main>
 
 <script>
-  lightboxImg.src = `https://res.cloudinary.com/dka8n305j/image/upload/gallery/${imageId}.jpg`;
+  function openLightbox(imageId) {
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    lightboxImg.src = `https://res.cloudinary.com/dka8n305j/image/upload/gallery/${imageId}.jpg`;
+    lightbox.classList.remove('hidden');
+  }
 
+  function closeLightbox() {
+    const lightbox = document.getElementById('lightbox');
+    lightbox.classList.add('hidden');
+  }
 </script>
+
 
 <%- include('../partials/footer') %>
